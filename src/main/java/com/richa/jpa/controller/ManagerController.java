@@ -22,15 +22,15 @@ public class ManagerController {
         return managerService.listAll();
     }
     @GetMapping(value = "/{id}")
-    public Manager getOneManager(@RequestParam int id){
+    public Manager getOneManager(@PathVariable int id){
         return managerService.getOne(id);
     }
     @PutMapping(value = "/{id}")
-    public Manager updateManager(@RequestParam int id, @RequestBody Manager manager){
+    public Manager updateManager(@PathVariable  int id, @RequestBody Manager manager){
         return managerService.updateManager(id, manager);
     }
     @DeleteMapping(value = "/{id}")
-    public void deleteManager(@RequestParam int id){
+    public void deleteManager(@PathVariable int id){
         managerService.deleteManager(id);
     }
 
